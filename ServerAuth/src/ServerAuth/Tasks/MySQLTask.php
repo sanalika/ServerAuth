@@ -10,13 +10,13 @@
 
 namespace ServerAuth\Tasks;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 use pocketmine\Server;
 
 use ServerAuth\ServerAuth;
 use ServerAuth\Providers\MySQLProvider;
 
-class MySQLTask extends PluginTask {
+class MySQLTask extends Task {
     
     private $mysqlp;
     
@@ -25,7 +25,6 @@ class MySQLTask extends PluginTask {
     private $cfg;
     
     public function __construct(ServerAuth $plugin, MySQLProvider $mysqlp){
-        parent::__construct($plugin);
         $this->mysqlp = $mysqlp;
         $this->plugin = $this->getOwner();
         $this->cfg["host"] = $this->mysqlp->cfg->get("host");
