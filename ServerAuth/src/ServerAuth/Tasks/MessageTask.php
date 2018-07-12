@@ -10,17 +10,16 @@
 
 namespace ServerAuth\Tasks;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 
 use ServerAuth\ServerAuth;
 
-class MessageTask extends PluginTask {
+class MessageTask extends Task {
     
     /** @var array */
     private $players = array();
 	
     public function __construct(ServerAuth $plugin){
-    	parent::__construct($plugin);
     }
     
     public function onRun(int $tick){
